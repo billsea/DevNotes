@@ -23,6 +23,10 @@ to stop process:
 kill <process id>
 
 ////////////////////Git commands ///////////////////////
+Create Repository from local directory:
+(navigate to directory)
+git init
+
 Clone a Repo:
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 

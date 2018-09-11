@@ -1,0 +1,75 @@
+	•	LLDB Commands
+	⁃	n = Step over
+	⁃	s = Step into
+	⁃	c = continue
+	⁃	finish = Step out
+	•	Can change a UI value while stopped at breakpoint with the lldb “p” command…must flush with 				CATransaction.flush() first.
+		⁃	Example
+		⁃	p CATransaction.flush()
+		⁃	p someLabel.text = “1234”
+	•	Debugger Variables
+		⁃	In Debugger, $ will let you reference variable out of scope(or with an additional p command) 
+		⁃	p let $label = someLabel
+		⁃	p print($label.text!)
+	•	Logging with Breakpoint
+		⁃	Edit Breakpoint
+		⁃	Action->Log Message
+		⁃	Use Expression for logging
+		⁃	Value: @someVar@ otherValue: @otherVar@ etc…
+	•	Symbolic Breakpoints
+		⁃	Enter some UIKit Method(debugger will look for this method)
+		⁃	-[UIViewController dealloc]
+		⁃	Add a Breakpoint Condition(edit breakpoint) to specify more detail, for example a specific class:
+		⁃	Swift
+		⁃	(BOOL)[$arg1 isKindOfClass: (id)NSClassFromString(@“AppName.MyCustomViewController”)]
+		⁃	Obj-C
+		⁃	(BOOL)[$arg1 isKindOfClass:[MyCustomViewController class]]
+	•	Viewing Return values
+		⁃	Add a breakpoint to a function return statement
+		⁃	po register read $rax (returns memory location)
+		⁃	Then, call unsafeBitCast with that memory location, and we need to specify the type.
+		⁃	po unsafeBitCast(0x000049839, to: UILabel.self)
+		⁃	To see the value, right click on variables view, and select “add expression”. past the 					unsafeBitCast call, and use the Quick look button to see the view that was returned.
+	•	Localization Debugging
+		⁃	Edit current scheme
+			⁃	Options tab
+			⁃	Application Language(select a language)
+		⁃	To Create a new Language Scheme
+			⁃	Manage Schemes
+			⁃	Select Current scheme, and duplicate the scheme(gear icon at bottom)
+			⁃	Select Application Language
+			⁃	Change scheme name as needed
+	•	Main Thread Checker
+		⁃	Use to make sure execution is on the proper thread:
+		⁃	Scheme
+		⁃	Diagnostics
+		⁃	Select “pause on issues”
+		⁃	Xcode will stop at thread issue when running
+	•	Malloc Stack Logging
+		⁃	Use to debug memory leak(i.e. retain cycle)
+		⁃	Run app with memory leak
+		⁃	Select “Debug Memory Graph” from  debugger toolbar
+		⁃	Select an instance of the view controller with memory leak(from navigation view Threads)
+		⁃	Open Scheme
+		⁃	Diagnostics
+		⁃	Select Logging->Malloc Stack
+		⁃	Close
+		⁃	Select “Show memory inspector” from inspector panel
+		⁃	Malloc info is displayed in Backtrace 
+		⁃	Select the small arrow to get more info on where the problem could be
+	•	Runtime issue Debug
+		⁃	Debug view hierarchy
+		⁃	Issue Navigator->select “Runtime”
+		⁃	Select an issue
+	•	Wireless Debug
+		⁃	Window -> devices and simulators
+		⁃	select “Connect via network”
+		⁃	If that doesn’t work, enter ip address
+		⁃	On Phone
+			⁃	Settings->WIFI
+			⁃	Tap “i” button next to connected network
+			⁃	copy ip address
+		⁃	In Xcode
+			⁃	Right click on device
+			⁃	Click connect via ip address
+			⁃	Type in the phone ip address and click “Connect”

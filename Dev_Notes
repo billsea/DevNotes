@@ -1,0 +1,123 @@
+///////////////// Build Debug /////////////////////////
+To debug a Jenkins build failure, for example:
+./check_target.rb:42:in `block in <main>': undefined method `[]' for nil:NilClass (NoMethodError)
+	from ./check_target.rb:41:in `each'
+	from ./check_target.rb:41:in `<main>'
+Shipping target is missing files!  Aborting build!
+
+
+////////////////////Shell Commands ///////////////////////
+sudo find /path  -name ‘file_name.png’  //search for file path as super user
+sudo find /  -name ‘*.png’ //search from root as super user
+sudo find .  -name ‘*.png’ //search current directory
+
+//Grep
+Search:
+(r=recursive, i = ignore case):
+grep -r -i ‘search_text’ /
+
+view processes:
+ps aux | grep -i git(to see git processes)
+
+to stop process:
+kill <process id>
+
+////////////////////Git commands ///////////////////////
+
+Get Status on current branch:
+git status
+
+Change branch:
+git checkout branch_name
+
+Pull a branch:
+git checkout -b branch_name  origin/branch_name
+
+Push new branch:
+git push origin newFeatureBranch
+
+Delete local branch:
+git branch -d the_local_branch
+
+Commit
+git commit -m “the message“
+
+Conflict resolve:
+use merge tool (Git merge tool)(Note: after conflicts are resolved run: git clean -f -d (to clean up backup files, see below)
+
+Clean up:
+Don’t check it temp files from conflict, such as:
+*.orig
+_BACKUP_
+_BASE_
+_LOCAL_
+_REMOTE_
+
+Do a "git clean -f -d" from the command line to clean them up after solving conflicts.
+
+To pull submodule: 
+git submodule update
+git submodule update —-Init
+
+Stash
+git stash list (to view stashes)
+git stash ( to stash files)
+git stash apply (apply last stash)
+To apply a specific file use: 
+	git checkout stash@{0} <full file path>
+
+Show local branches:
+git branch
+* master
+
+Remove file from working tree(this will undo a modified file)
+git update-index --assume-unchanged file
+
+show remote branches:
+git branch -r
+git remote show origin
+
+Create the new local branch “newFeatureBranch” from Develop:
+git checkout Develop
+git branch feature/newFeatureBranch
+git checkout feature/newFeatureBranch
+
+Add files 
+(git add .) for all files
+(git add file/is/here)
+
+Remove changes to a single file
+git checkout path/to/file
+
+After pull, commit merge when prompted
+Leave the existing message, then to save, do this:
+-press "esc"
+- enter “:”
+-write ":wq" 
+- enter
+
+Push
+Git push
+
+Git Bisect:
+To pinpoint a commit that introduced a bug.
+$ git bisect start
+$ git bisect bad                 # Current version is bad
+$ git bisect good v2.6.13-rc2    # v2.6.13-rc2 is known to be good
+
+
+///////////////// NUI  /////////////
+NUI NSS auto reload,. edit the nss files, run autotouch.sh(changed to prebuild.mk) from the project route, and enable this line in AppDelegate (updating the path of course): [NUISettings setAutoUpdatePath:@“/path/to/app_styles.nss"];
+
+
+//////////// Xcode Debugging ////////////
+-  When getting exception without symbolicated stack trace(i.e. *** First throw call stack:
+(0x2e65af83 0x39141ccf 0x2e594f0d 0x32ea05 0x3), add an Exception Breakpoint (using the + at the bottom of the Breakpoint Navigator) andadd the action bt to it (click the Add Action button, select Debugger Command, enter "bt”(to display current stack trace) or “po $arg1” in the text field). This will display the stack trace as soon as an exception is thrown.
+
+
+//////////breakpoints////////////
+Symbolic breakpoint(add method to symbol field to break. “bt” to show backtrace in console)
+
+Exception breakpoint: breaks on exception 
+
+

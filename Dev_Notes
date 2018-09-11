@@ -23,6 +23,8 @@ to stop process:
 kill <process id>
 
 ////////////////////Git commands ///////////////////////
+Clone a Repo:
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Get Status on current branch:
 git status

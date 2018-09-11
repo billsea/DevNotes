@@ -1,8 +1,8 @@
 	•	LLDB Commands
-	⁃	n = Step over
-	⁃	s = Step into
-	⁃	c = continue
-	⁃	finish = Step out
+		⁃	n = Step over
+		⁃	s = Step into
+		⁃	c = continue
+		⁃	finish = Step out
 	•	Can change a UI value while stopped at breakpoint with the lldb “p” command…must flush with 				CATransaction.flush() first.
 		⁃	Example
 		⁃	p CATransaction.flush()
@@ -21,9 +21,9 @@
 		⁃	-[UIViewController dealloc]
 		⁃	Add a Breakpoint Condition(edit breakpoint) to specify more detail, for example a specific class:
 		⁃	Swift
-		⁃	(BOOL)[$arg1 isKindOfClass: (id)NSClassFromString(@“AppName.MyCustomViewController”)]
+			⁃	(BOOL)[$arg1 isKindOfClass: (id)NSClassFromString(@“AppName.MyCustomViewController”)]
 		⁃	Obj-C
-		⁃	(BOOL)[$arg1 isKindOfClass:[MyCustomViewController class]]
+			⁃	(BOOL)[$arg1 isKindOfClass:[MyCustomViewController class]]
 	•	Viewing Return values
 		⁃	Add a breakpoint to a function return statement
 		⁃	po register read $rax (returns memory location)

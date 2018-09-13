@@ -48,6 +48,11 @@ git branch -d the_local_branch
 Commit
 git commit -m “the message“
 
+Diff
+git diff: Show differences between your working directory and the index.
+git diff –cached: Show differences between the index and the most recent commit.
+git diff HEAD: Show the differences between your working directory and the most recent commit.
+
 Conflict resolve:
 use merge tool (Git merge tool)(Note: after conflicts are resolved run: git clean -f -d (to clean up backup files, see below)
 

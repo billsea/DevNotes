@@ -93,9 +93,12 @@ git checkout Develop
 git branch feature/newFeatureBranch
 git checkout feature/newFeatureBranch
 
-Add files 
+Add files to staging
 (git add .) for all files
 (git add file/is/here)
+
+Remove all from staging
+git reset HEAD -- .
 
 Remove changes to a single file
 git checkout path/to/file

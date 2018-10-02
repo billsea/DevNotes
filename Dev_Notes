@@ -102,7 +102,19 @@ git reset HEAD -- .
 
 Ignore:
 add .gitignore file to working directory(project root, not git directory)
+Use: touch .gitignore
 add file name or for directory add "DirectoryName/"
+
+Common gitignore for xcode:
+#ignore files
+.DS_Store
+Build
+xcuserdata
+*.xccheckout
+*.xcscmblueprint
+Pods/
+
+
 
 Remove changes to a single file
 git checkout path/to/file

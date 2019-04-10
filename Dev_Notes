@@ -129,6 +129,14 @@ Leave the existing message, then to save, do this:
 Push
 Git push
 
+
+Git Tag:
+git tag -d <tagname> //Line 1 removes the tag in local env.
+git push origin :refs/tags/<tagname> //Line 2 removes the tag in remote env.
+git tag <tagname> <commitId> //Line 3 adds the tag to different commit
+git push origin <tagname> //Line 4 pushes the change to the remote
+
+
 Git Bisect:
 To pinpoint a commit that introduced a bug.
 $ git bisect start

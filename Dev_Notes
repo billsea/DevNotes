@@ -135,6 +135,10 @@ $ git bisect start
 $ git bisect bad                 # Current version is bad
 $ git bisect good v2.6.13-rc2    # v2.6.13-rc2 is known to be good
 
+Git Rebase:
+- This will apply changes in master to "feature_branch"
+git checkout feature_branch
+git rebase master
 
 ///////////////// NUI  /////////////
 NUI NSS auto reload,. edit the nss files, run autotouch.sh(changed to prebuild.mk) from the project route, and enable this line in AppDelegate (updating the path of course): [NUISettings setAutoUpdatePath:@“/path/to/app_styles.nss"];

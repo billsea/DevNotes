@@ -144,7 +144,8 @@ $ git bisect bad                 # Current version is bad
 $ git bisect good v2.6.13-rc2    # v2.6.13-rc2 is known to be good
 
 Git Rebase:
-- This will apply changes in master to "feature_branch"
+- This will base "feature_branch" on the latest master
+So, After pulling current master, do:
 git checkout feature_branch
 git rebase master
 

@@ -36,8 +36,10 @@ git status
 Change branch:
 git checkout branch_name
 
-Pull a branch:
+Pull a branch and checkout:
 git checkout -b branch_name  origin/branch_name
+Example:
+git checkout -b release_branch_1_0_0 origin/release/1.0.0
 
 Push new branch:
 git push origin newFeatureBranch

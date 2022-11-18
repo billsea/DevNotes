@@ -2,10 +2,6 @@
 To debug a Jenkins build failure, for example:
 ./check_target.rb:42:in `block in <main>': undefined method `[]' for nil:NilClass (NoMethodError)
 	from ./check_target.rb:41:in `each'
-	from ./check_target.rb:41:in `<main>'
-Shipping target is missing files!  Aborting build!
-
-
 ////////////////////Shell Commands ///////////////////////
 sudo find /path  -name ‘file_name.png’  //search for file path as super user
 sudo find /  -name ‘*.png’ //search from root as super user
@@ -150,6 +146,12 @@ Git Rebase:
 So, After pulling current master, do:
 git checkout feature_branch
 git rebase master
+
+Rebase merge conflicts(local/remote example):
+git checkout A
+git rebase   B    # rebase A on top of B
+local is B (rebase onto),
+remote is A
 
 // interactive rebase (will display commits and other options)
 git rebase -i master

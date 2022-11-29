@@ -1,24 +1,5 @@
-///////////////// Build Debug /////////////////////////
-To debug a Jenkins build failure, for example:
-./check_target.rb:42:in `block in <main>': undefined method `[]' for nil:NilClass (NoMethodError)
-	from ./check_target.rb:41:in `each'
-////////////////////Shell Commands ///////////////////////
-sudo find /path  -name ‘file_name.png’  //search for file path as super user
-sudo find /  -name ‘*.png’ //search from root as super user
-sudo find .  -name ‘*.png’ //search current directory
+//////////////////// Git commands ///////////////////////
 
-//Grep
-Search:
-(r=recursive, i = ignore case):
-grep -r -i ‘search_text’ /
-
-view processes:
-ps aux | grep -i git(to see git processes)
-
-to stop process:
-kill <process id>
-
-////////////////////Git commands ///////////////////////
 Create Repository from local directory:
 (navigate to directory)
 git init
@@ -166,6 +147,25 @@ git rebase -i master
 7.	This should show you a list of commits on user_story_2 that you want to include in the rebase. 
 
 
+///////////////// Build Debug /////////////////////////
+To debug a Jenkins build failure, for example:
+./check_target.rb:42:in `block in <main>': undefined method `[]' for nil:NilClass (NoMethodError)
+	from ./check_target.rb:41:in `each'
+////////////////////Shell Commands ///////////////////////
+sudo find /path  -name ‘file_name.png’  //search for file path as super user
+sudo find /  -name ‘*.png’ //search from root as super user
+sudo find .  -name ‘*.png’ //search current directory
+
+//Grep
+Search:
+(r=recursive, i = ignore case):
+grep -r -i ‘search_text’ /
+
+view processes:
+ps aux | grep -i git(to see git processes)
+
+to stop process:
+kill <process id>
 
 ///////////////// NUI  /////////////
 NUI NSS auto reload,. edit the nss files, run autotouch.sh(changed to prebuild.mk) from the project route, and enable this line in AppDelegate (updating the path of course): [NUISettings setAutoUpdatePath:@“/path/to/app_styles.nss"];

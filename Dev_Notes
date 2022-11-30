@@ -1,4 +1,4 @@
-//////////////////// Git commands ///////////////////////
+// Git commands
 
 Create Repository from local directory:
 (navigate to directory)
@@ -147,7 +147,7 @@ git rebase -i master
 7.	This should show you a list of commits on user_story_2 that you want to include in the rebase. 
 
 
-///////////////// Build Debug /////////////////////////
+// Build Debug 
 To debug a Jenkins build failure, for example:
 ./check_target.rb:42:in `block in <main>': undefined method `[]' for nil:NilClass (NoMethodError)
 	from ./check_target.rb:41:in `each'
@@ -167,16 +167,13 @@ ps aux | grep -i git(to see git processes)
 to stop process:
 kill <process id>
 
-///////////////// NUI  /////////////
-NUI NSS auto reload,. edit the nss files, run autotouch.sh(changed to prebuild.mk) from the project route, and enable this line in AppDelegate (updating the path of course): [NUISettings setAutoUpdatePath:@“/path/to/app_styles.nss"];
 
-
-//////////// Xcode Debugging ////////////
+// Xcode Debugging 
 -  When getting exception without symbolicated stack trace(i.e. *** First throw call stack:
 (0x2e65af83 0x39141ccf 0x2e594f0d 0x32ea05 0x3), add an Exception Breakpoint (using the + at the bottom of the Breakpoint Navigator) andadd the action bt to it (click the Add Action button, select Debugger Command, enter "bt”(to display current stack trace) or “po $arg1” in the text field). This will display the stack trace as soon as an exception is thrown.
 
 
-//////////breakpoints////////////
+// Breakpoints
 Symbolic breakpoint(add method to symbol field to break. “bt” to show backtrace in console)
 
 Exception breakpoint: breaks on exception 
